@@ -22,6 +22,8 @@ public class GameActive : MonoBehaviour
     private float timerCount;
     private bool gameIsActive;
 
+    private Vector2 inputRotation;
+
 
     private void Awake()
     {
@@ -40,19 +42,24 @@ public class GameActive : MonoBehaviour
         startSpherePos = sphereObj.transform.position;
     }
 
-    
+    private void Update()
+    {
+        RotateFloor(inputRotation);
+    }
+
+    private void RotateFloor(Vector2 rotat)
+    {
+        
+        floorBlock.transform.rotation = Quaternion.Euler(rotat.y, 0f, -rotat.x);
+    }
+
 
     public void RotateFloorContext(InputAction.CallbackContext ctx)
     {
-        Vector2 inputRotation = ctx.ReadValue<Vector2>();
-        Debug.Log(inputRotation);
-        floorBlock.transform.rotation = Quaternion.Euler(inputRotation.y, 0f, -inputRotation.x);
+        inputRotation = ctx.ReadValue<Vector2>();
     }
 
-    public void TestButton(InputAction.CallbackContext ctx)
-    {
-        Debug.Log("Presetd");
-    }
+    
 
     public void DisableSphere()
     {
