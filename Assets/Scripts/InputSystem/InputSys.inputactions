@@ -1,0 +1,139 @@
+{
+    "name": "InputSys",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "52390ba8-3ce0-404d-a4b9-2487a6cdc6c4",
+            "actions": [
+                {
+                    "name": "Vector2LStick",
+                    "type": "Value",
+                    "id": "e2faaac5-1881-4238-8d31-d8a79ed00c18",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "buttonTest",
+                    "type": "Button",
+                    "id": "d0c5567b-7436-49fd-88b5-956bd8de94c8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1696d7b1-d24a-46ae-b9f3-ff61a949be8f",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad|Touch|Mouse",
+                    "action": "Vector2LStick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1d7a395f-c7b9-418a-b266-da1da8a58687",
+                    "path": "<Joystick>/stick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad|Touch|Mouse",
+                    "action": "Vector2LStick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f2884c4d-c562-4118-bdf3-ec0ee786f286",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad|Touch|Mouse",
+                    "action": "Vector2LStick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "462b91bd-ec60-4cb2-bd11-4d7caab17b16",
+                    "path": "<Touchscreen>/primaryTouch/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad|Touch|Mouse",
+                    "action": "Vector2LStick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "93a24867-c7cf-42ec-879b-942c7b2e0200",
+                    "path": "<XInputController>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad|Touch|Mouse",
+                    "action": "Vector2LStick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ee9d4889-7b48-4d95-a1a6-65b7d66bbcf6",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad|Touch|Mouse",
+                    "action": "buttonTest",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7df21cad-ca33-432f-98aa-c19f00f19162",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad|Touch|Mouse",
+                    "action": "buttonTest",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Gamepad|Touch|Mouse",
+            "bindingGroup": "Gamepad|Touch|Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<AndroidJoystick>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Touchscreen>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<XInputController>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

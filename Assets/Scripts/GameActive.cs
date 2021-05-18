@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameActive : MonoBehaviour
 {
+    public static GameActive instance;
+
     [SerializeField] private Transform floorBlock;
     [SerializeField] private GameObject sphereObj;
     private Rigidbody sphereRb;
@@ -12,25 +15,43 @@ public class GameActive : MonoBehaviour
     private Vector3 startSpherePos;
 
 
-    private float minForce = 0.1f;
-    private float maxForce = 1f;
+    private float minForce = 1f;
+    private float maxForce = 2f;
 
     [SerializeField] private TextMeshProUGUI timerText;
     private float timerCount;
     private bool gameIsActive;
 
+
+    private void Awake()
+    {
+        if (GameActive.instance == null)
+            instance = this;
+        else
+        {
+            Debug.LogError("GameActive.instance already exist");
+            Destroy(this.gameObject);
+        }
+    }
+
     private void Start()
     {
         sphereRb = sphereObj.GetComponent<Rigidbody>();
         startSpherePos = sphereObj.transform.position;
-        ActivateSphere();
     }
 
     
 
-    public void RotateFloor(Vector2 inputRotation)
+    public void RotateFloorContext(InputAction.CallbackContext ctx)
     {
-        floorBlock.transform.rotation = Quaternion.Euler(inputRotation.x, 0f, inputRotation.y);
+        Vector2 inputRotation = ctx.ReadValue<Vector2>();
+        Debug.Log(inputRotation);
+        floorBlock.transform.rotation = Quaternion.Euler(inputRotation.y, 0f, -inputRotation.x);
+    }
+
+    public void TestButton(InputAction.CallbackContext ctx)
+    {
+        Debug.Log("Presetd");
     }
 
     public void DisableSphere()
@@ -60,7 +81,7 @@ public class GameActive : MonoBehaviour
         {
             DisableSphere();
             gameIsActive = false;
-            Debug.Log("GameOver");
+            GameManager.instance.GameOver();
         }
     }
 

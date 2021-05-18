@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class TouchInput : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private GameActive gameActiveScript;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private Touch theTouch;
+
+    [SerializeField] float speedMod = 0.01f;
+    private Vector3 startPos;
+    private Vector3 touchDeltPosition;
+
+
 }
