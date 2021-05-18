@@ -1,0 +1,93 @@
+{
+    "name": "InputSystem",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "2dc1f08f-5e93-4bf9-945b-cf7e249d9d66",
+            "actions": [
+                {
+                    "name": "Vector2LStick",
+                    "type": "Value",
+                    "id": "908185cc-9da8-4b83-acad-e1485f433f7f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Vector2Delta",
+                    "type": "Value",
+                    "id": "9629812f-a70c-405e-a36f-24de2438f48b",
+                    "expectedControlType": "Vector2",
+                    "processors": "ScaleVector2(x=0.05,y=0.05)",
+                    "interactions": ""
+                },
+                {
+                    "name": "Vector3Gyro",
+                    "type": "Value",
+                    "id": "f2337ac1-af1d-4e3b-be37-137bf7d4a81c",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "efb0d905-3c22-4a75-bad9-dd10a31d9491",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "ScaleVector2(x=20,y=20)",
+                    "groups": "",
+                    "action": "Vector2LStick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "68f89cdb-63a7-4d4b-a057-0d2a6a5033a0",
+                    "path": "<Joystick>/stick",
+                    "interactions": "",
+                    "processors": "ScaleVector2(x=20,y=20)",
+                    "groups": "",
+                    "action": "Vector2LStick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "12594da6-38ec-4205-b555-4c6df5121521",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Vector2Delta",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a9887f89-2b78-4f37-954c-885b20dc3230",
+                    "path": "<Touchscreen>/primaryTouch/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Vector2Delta",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ba41cf14-30cf-4f3b-87d2-af674e0fb80d",
+                    "path": "<Gyroscope>/angularVelocity",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Vector3Gyro",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

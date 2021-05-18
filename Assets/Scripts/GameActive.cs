@@ -22,7 +22,7 @@ public class GameActive : MonoBehaviour
     private float timerCount;
     private bool gameIsActive;
 
-    private Vector2 inputRotation;
+    
 
 
     private void Awake()
@@ -42,21 +42,15 @@ public class GameActive : MonoBehaviour
         startSpherePos = sphereObj.transform.position;
     }
 
-    private void Update()
-    {
-        RotateFloor(inputRotation);
-    }
+    
+    
 
-    private void RotateFloor(Vector2 rotat)
+    public void RotateFloor(Vector2 addRot)
     {
-        
-        floorBlock.transform.rotation = Quaternion.Euler(rotat.y, 0f, -rotat.x);
-    }
-
-
-    public void RotateFloorContext(InputAction.CallbackContext ctx)
-    {
-        inputRotation = ctx.ReadValue<Vector2>();
+        if (gameIsActive)
+        {
+            floorBlock.rotation = Quaternion.Euler(addRot.y, 0f, -addRot.x);
+        }
     }
 
     
@@ -78,7 +72,7 @@ public class GameActive : MonoBehaviour
         sphereRb.constraints = RigidbodyConstraints.None;
         sphereRb.AddForce(Random.insideUnitSphere * Random.Range(minForce, maxForce), ForceMode.Impulse);
 
-
+        floorBlock.rotation = Quaternion.Euler(0f, 0f, 0f);
         StartCoroutine(TimerEnumerator());
     }
 
